@@ -1,25 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# poke-trader
+Poke Trader é uma calculadora de trades de pokemon, onde o usuário, ao escolher quais pokémons deseja trocar, calcula se uma troca é "justa" ou não. A análise é feira através da 'base experience' de cada um dos pokémons. As informações sobre os pokémons são obtidas da API PokeAPI. Feito com Ruby on Rails, React JS e PostgreSQL.
