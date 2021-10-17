@@ -6,11 +6,194 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/c19f8336d7.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+      body {
+        background-color: #f8f8fb;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /*font-family: 'Rajdhani', sans-serif;*/
+      }
+      .btn-primary {
+        color: #fff;
+        background-color: #4589ed;
+        border-color: #4589ed;
+      }
+      .btn-primary:hover {
+        color: #fff;
+        background-color: #2f68bd;
+        border-color: #2f68bd;
+      }
+
+      /* player profile */
+      .player-profile-card {
+        background: #faf9fc;
+        padding: 0px;
+        border-radius: 12px;
+        box-shadow: 0 0 40px 0 rgba(94,92,154, .06);
+      }
+
+      .player-profile-card-bottom {
+        padding: 15px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px
+      }
+
+      .player-profile-card.player1 .player-profile-card-bottom {
+        background: #1bb984;
+        color: #fff;
+      }
+
+      .player-profile-card.player2 .player-profile-card-bottom {
+        background: #9d81d5;
+        color: #fff;
+      }
+
+      .player-profile-cover {
+        background-position: center;
+        background-size: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        height: 120px;
+      }
+
+      .player-profile-card.player1 .player-profile-cover {
+        background-image: url(http://cdn30.us1.fansshare.com/image/pcwallpapers/pokemon-pc-wallpaper-248119474.jpg);
+      }
+
+      .player-profile-card.player2 .player-profile-cover {
+        background-image: url(https://wallpaperaccess.com/full/329113.jpg);
+      }
+
+      .player-info-container {
+        text-align: center;
+        margin-top: -36px;
+      }
+
+      .player-avatar {
+        width: 72px;
+        border-radius: 50px;
+      }
+
+      .player-profile-card.player1 .player-avatar {
+        border: 5px solid #1bb984;
+      }
+
+      .player-profile-card.player2 .player-avatar {
+        border: 5px solid #9d81d5;
+      }
+
+      .btn-deck {
+        border-radius: 50px;
+        font-size: .7rem;
+        padding: 5px 10px 5px 10px;
+      }
+
+      /* Card  */
+      .cards-row {
+        padding: 15px;
+      }
+
+      .card {
+        box-shadow: 0px 0px 9px 0px #ddd;
+        border: none;
+      }
+
+      .card-content {
+        text-align: center;
+        /* margin-top: 20px; */
+      }
+
+      .card-body {
+        padding: 0rem .5rem;
+        padding-bottom: 20px;
+      }
+
+      .destroy-pokemon-card {
+        display:block;
+        text-align: right;
+        padding-right: 5px;
+      }
+
+      .destroy-pokemon-card .destroy i {
+        color: #eb9f9f;
+        transition: color .15s ease-in-out;
+      }
+
+      .destroy-pokemon-card .destroy i:hover {
+        cursor: pointer;
+        color: #e95b5b;
+      }
+
+      .pokemon-base-xp {
+        font-size: .75rem !important;
+      }
+
+      .trade-info-container {
+        text-align: center;
+        margin-top:20px;
+        margin-bottom: 20px;
+      }
+
+      .btn-trade {
+        font-weight: bold;
+        font-size: .8em;
+        border-radius: 20px;
+        padding: 10px 20px 10px 20px;
+      }
+
+      .btn-trade i {
+        margin-right:  5px;
+      }
+
+      .navbar-poke-trader {
+        background-color: #615dfa !important;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'index' %>
   </head>
 
   <body>
+
+    <header>
+      <div class="navbar navbar-dark bg-dark shadow-sm navbar-poke-trader">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>Poke Trader</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+
     <%= yield %>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
