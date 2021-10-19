@@ -178,6 +178,7 @@ const Trades = () => {
     return (
         <>
         <div className="container">
+            <p className="mt-5 mb-5 text-uppercase text-center"><strong>Centro de Trocas</strong></p>
             <div className="row mt-4 mb-4">
                 <div className="col-xs-12 col-md-12 col-lg-5">
                     <div className="player-profile-card player1">
