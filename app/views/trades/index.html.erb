@@ -1,0 +1,99 @@
+<style>
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color);
+}
+
+</style>
+
+<div class="container">
+    
+    <% @trades.each do |trade| %>
+    <div class="row">
+    <div class="col mt-4">
+        <span class="text-muted" style="font-size: .8rem; margin-bottom: 0px;"><strong>TREINADOR 1</strong></span>
+        <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-6 mb-4">
+            <span class="text-muted" style="font-size: .8rem; margin-bottom: 0px;"><strong>TREINADOR 1</strong></span>
+            <div style="background: #fff;padding: 0px;border-radius: 12px;box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);padding: 15px;text-align: center;">
+                <% trade.player_one_pokemons.each do |pokemon| %>
+                <img src="<%= pokemon.sprite %>" style="width:72px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
+                <% end %>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12 col-lg-6 mb-4">
+            <span class="text-muted" style="font-size: .8rem; margin-bottom: 0px;"><strong>TREINADOR 1</strong></span>
+            <div style="background: #fff;padding: 0px;border-radius: 12px;box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);padding: 15px;text-align: center;">
+                <% trade.player_two_pokemons.each do |pokemon| %>
+                <img src="<%= pokemon.sprite %>" style="width:72px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
+                <% end %>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <% end %>
+
+        <div class="col">
+
+            <table class="table table-striped table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Treinador 1</th>
+                            <th>Treinador 2</th>
+                            <th>Resuldado</th>
+                            <th>Realizado em</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tradeHistoryBody">
+                        <% @trades.each do |trade| %>
+                            <tr>
+                                <td>
+                                    <% trade.player_one_pokemons.each do |pokemon| %>
+                                    <img src="<%= pokemon.sprite %>" style="width:40px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
+                                    <% end %>
+                                </td>
+                                <td>
+                                    <% trade.player_two_pokemons.each do |pokemon| %>
+                                    <img src="<%= pokemon.sprite %>" style="width:40px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
+                                    <% end %>
+                                </td>
+                                <td><%= trade.is_fair %></td>
+                                <td><%= trade.created_at %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

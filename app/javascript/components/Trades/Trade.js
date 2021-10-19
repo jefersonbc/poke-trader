@@ -174,6 +174,49 @@ const Trades = () => {
         )
     })
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+    
+        if (playerOnePokemons.length === 0 || playerTwoPokemons.length === 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                confirmButtonColor: '#4589ed',
+                text: 'Escolha pokémons para os dois treinadores!',
+            })    
+            return
+        }
+    
+        let player_one_pokemons = playerOnePokemons.map((pokemon) => ({ player_id: 1, pokemon_id: pokemon.id }))
+        let player_two_pokemons = playerTwoPokemons.map((pokemon) => ({ player_id: 2, pokemon_id: pokemon.id }))
+        let trade_items = player_one_pokemons.concat(player_two_pokemons)
+
+        const postData = {
+            is_fair: baseExperienceDifference < 20,
+            player_one_id: 1,
+            player_two_id: 2,
+            trade_items_attributes: trade_items
+        }
+
+        const railscsrfToken = document.querySelector('[name=csrf-token]').content
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = railscsrfToken
+    
+        axios.post('/api/v1/trades.json', { trade: postData }).then((response) => {
+          if (response.status === 201) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Isso aí!',
+                text: 'Troca registrada',
+                confirmButtonColor: '#4589ed',
+            })
+            setplayerOnePokemons([])
+            setplayerTwoPokemons([])
+          } else {
+            console.log("Error when registring trade")
+          }
+        })
+    }
+
     // const player2_pokemons_list = playerTwoPokemons.map ( item => {
     //     return (
     //         <PlayerPokemon
@@ -220,7 +263,7 @@ const Trades = () => {
                             <p>XP Total: {totalBaseExperiencePlayerOne}</p>
                             <p> {baseExperienceDifference > 20 ? "Troca injusta" : "Troca justa"}</p>
                         </div>
-                        <a href="#" className="btn btn-primary btn-trade">
+                        <a href="#" className="btn btn-primary btn-trade" onClick={handleSubmit}>
                             <i className="fas fa-sync" aria-hidden="true"></i>
                             TROCAR
                         </a>
