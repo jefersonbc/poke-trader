@@ -48,13 +48,23 @@ const Trades = () => {
             if (playerOnePokemons.length < 6 ) {
                 setplayerOnePokemons(playerOnePokemons.concat(newPokemon))
             } else {
-                alert('A Quantidade de pokémons do Treinador 1 excede o limite de 6.')
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    confirmButtonColor: '#4589ed',
+                    text: 'O treinador já possui o número máximo de pokémons para troca!',
+                })
             }
         } else if (player == 'playerTwo') {
             if (playerTwoPokemons.length < 6 ) {
                 setplayerTwoPokemons(playerTwoPokemons.concat(newPokemon))
             } else {
-                alert('A Quantidade de pokémons do Treinador 2 excede o limite de 6.')
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    confirmButtonColor: '#4589ed',
+                    text: 'O treinador já possui o número máximo de pokémons para troca!',
+                })
             }
         }
     }
