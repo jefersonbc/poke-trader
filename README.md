@@ -20,7 +20,9 @@ O bjetivo deste projeto é gerenciar trocas de pokemon, onde o usuário escolhe 
 A aplicação está disponível em produção no endereço: **https://jefersonbc-poke-trader.herokuapp.com/**
 
 ### Local
-Para executar a aplicação (nativamente) você precisa do PostgreSQL instalado e rodando. Com isso, basta rodar **bundle install** seguido por **rails db:create && rails db:migrate**. **Atenção!** É necessário pré-popular a aplicação com os pokémons da API PokeAPI. Para isso, executo **rails db:seed**. Após isso, basta rodar o servidor do Rails com o comando **rails s** e acessar o endereço **http://localhost:3000** no seu navegador.
+Para executar a aplicação (nativamente) você precisa do PostgreSQL instalado e rodando. Com isso, basta rodar **bundle install** seguido por **rails db:create && rails db:migrate**.
+
+**Atenção!** É necessário pré-popular a aplicação com os pokémons da API PokeAPI. Para isso, executo **rails db:seed**. Após isso, basta rodar o servidor do Rails com o comando **rails s** e acessar o endereço **http://localhost:3000** no seu navegador.
 
 ## API Endpoints e rotas
 A aplicação possui os seguintes endpoints e rotas:
