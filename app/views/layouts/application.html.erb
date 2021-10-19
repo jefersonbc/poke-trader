@@ -8,10 +8,6 @@
 
     <script src="https://kit.fontawesome.com/c19f8336d7.js" crossorigin="anonymous"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -20,7 +16,6 @@
         background-color: #f8f8fb;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        /*font-family: 'Rajdhani', sans-serif;*/
       }
       .btn-primary {
         color: #fff;
@@ -90,6 +85,22 @@
 
       .player-profile-card.player2 .player-avatar {
         border: 5px solid #9d81d5;
+      }
+
+      .btn-history {
+        border-radius: 50px;
+        /* font-size: .8rem; */
+        padding: 5px 10px 5px 10px;
+        /* background: #fff;
+        border-color: #fff; */
+        color: #615dfa;
+        font-weight: bold;
+        /* text-transform: uppercase; */
+      }
+
+      .btn-history:hover {
+        background: #f0f0f0;
+        border-color: #f0f0f0;
       }
 
       .btn-deck {
@@ -185,7 +196,8 @@
       }
 
       .navbar-poke-trader {
-        background-color: #615dfa !important;
+        /* background-color: #615dfa !important; */
+        background-color: #dd5555 !important
       }
 
       #cardsModal .modal-content {
@@ -230,15 +242,22 @@
   <body>
 
     <header>
-      <div class="navbar navbar-dark bg-dark shadow-sm navbar-poke-trader">
+      <div class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm navbar-poke-trader">
         <div class="container">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>Poke Trader</strong>
-          </a>
-          <button id="btn-deck" type="button" class="btn btn-primary btn-sm btn-deck pull-right" data-bs-toggle="modal" data-bs-target="#tradeHistoryModal">Histórico</button>
+          <a class="navbar-brand" href="#"><strong>Poke-Trader</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#">Trocar Pokémons</a>
+              <a class="nav-link" href="#">Histórico de Trocas</a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
+    
     <main>
 
     <%= yield %>

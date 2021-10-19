@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import Pokemon from './Pokemon'
-import PlayerCard from './PlayerCard'
-import PlayerPokemon from './PlayerPokemon'
 
 const Trades = () => {
 
@@ -36,25 +34,6 @@ const Trades = () => {
     const baseExperienceDifference = Math.abs(
         totalBaseExperiencePlayerOne - totalBaseExperiencePlayerTwo,
     )
-
-    // function isFairHandler() {
-    //     let winner = ''
-        
-    //     if (baseExperienceDifference <= isFairDiff){
-    //         setisFair(false)
-    //         if (totalBaseExperiencePlayerOne < totalBaseExperiencePlayerTwo){
-    //             winner = "O Treinador 2 está em vantagem."
-    //         } else {
-    //             winner = "O Treinador 1 está em vantagem."
-    //         }
-    //         setisFairText(`Troca injusta. ${winner}`)
-    //     } else {
-    //         setisFair(true)
-    //         setisFairText("Troca justa. Parabéns treinadores!")
-    //     }
-
-    //     console.log(baseExperienceDifference)
-    // }
 
     function playerTurnHandler(player) {
         if (player == 'playerOne') {
@@ -97,23 +76,10 @@ const Trades = () => {
     const pokemons_list = pokemons.map( item => {
         return (
             <div key={item.attributes.id} className="col-xs-6 col-md-6 col-lg-3 col-xl-2" onClick={() => addPokemonToPlayer(item, playerTurn)}>
-
                 <Pokemon
                     key={item.attributes.name}
                     attributes={item.attributes}
                 />
-
-                {/* <div className="card mb-3">
-                    <div className="row">
-                    <div className="col card-content">
-                        <img src={ item.attributes.sprite } width="64" alt={ item.attributes.name }></img>
-                        <div className="card-body">
-                        <p className="card-title mb-0"><strong>{ item.attributes.name }</strong></p>
-                        <p className="card-text"><small className="text-muted pokemon-base-xp">Base Experience: { item.attributes.base_experience }</small></p>
-                        </div>
-                    </div>
-                    </div>
-                </div> */}
             </div>
         )
     })
@@ -139,10 +105,6 @@ const Trades = () => {
                 </div>
                 </div>
             </div>
-            // <PlayerPokemon
-            //     key={item.attributes.name}
-            //     attributes={item.attributes}
-            // />
         )
     })
 
@@ -167,10 +129,6 @@ const Trades = () => {
                 </div>
                 </div>
             </div>
-            // <PlayerPokemon
-            //     key={item.attributes.name}
-            //     attributes={item.attributes}
-            // />
         )
     })
 
@@ -217,30 +175,18 @@ const Trades = () => {
         })
     }
 
-    // const player2_pokemons_list = playerTwoPokemons.map ( item => {
-    //     return (
-    //         <PlayerPokemon
-    //             key={item.attributes.name}
-    //             attributes={item.attributes}
-    //         />
-    //     )
-    // })
-
-
-
     return (
-
         <>
         <div className="container">
-            <div className="row mt-4">
+            <div className="row mt-4 mb-4">
                 <div className="col-xs-12 col-md-12 col-lg-5">
                     <div className="player-profile-card player1">
                         <div className="mb-3">
                         <div className="player-profile-cover"></div>
                         <div className="player-info-container">
                             <img className="player-avatar" src="https://poke-trader.s3.sa-east-1.amazonaws.com/avatar2.jpg"></img>
-                            <p className="mb-1"><strong>TREINADOR 1</strong></p>
-                            <button onClick={() => playerTurnHandler("playerOne")} id="btn-deck" type="button" className="btn btn-success btn-sm btn-deck" data-bs-toggle="modal" data-bs-target="#cardsModal">ESCOLHER CARTAS</button>
+                            <p className="mb-1"><strong>Nash</strong></p>
+                            <button onClick={() => playerTurnHandler("playerOne")} id="btn-deck" type="button" className="btn btn-success btn-sm btn-deck mt-3" data-bs-toggle="modal" data-bs-target="#cardsModal">ESCOLHER POKÉMONS</button>
                         </div>
                         </div>
 
@@ -259,9 +205,11 @@ const Trades = () => {
                 <div className="col-xs-12 col-md-12 col-lg-2 align-self-center">
                     <div className="trade-info-container">
                         <div className="">
-                            <p>Treinador 1</p>
-                            <p>XP Total: {totalBaseExperiencePlayerOne}</p>
-                            <p> {baseExperienceDifference > 20 ? "Troca injusta" : "Troca justa"}</p>
+                            <p>
+                                
+                                { playerOnePokemons.length != 0 || playerTwoPokemons.length != 0 ? baseExperienceDifference > isFairDiff ? "Cuidado, essa troca é injusta!" : "Ótimo! A troca será justa." : "..."}
+                                
+                            </p>
                         </div>
                         <a href="#" className="btn btn-primary btn-trade" onClick={handleSubmit}>
                             <i className="fas fa-sync" aria-hidden="true"></i>
@@ -275,8 +223,8 @@ const Trades = () => {
                         <div className="player-profile-cover"></div>
                         <div className="player-info-container">
                             <img className="player-avatar" src="https://poke-trader.s3.sa-east-1.amazonaws.com/avatar1.jpg"></img>
-                            <p className="mb-1"><strong>TREINADOR 2</strong></p>
-                            <button onClick={() => playerTurnHandler('playerTwo')} id="btn-deck" type="button" className="btn btn-success btn-sm btn-deck-alt" data-bs-toggle="modal" data-bs-target="#cardsModal">ESCOLHER CARTAS</button>
+                            <p className="mb-1"><strong>Tatu</strong></p>
+                            <button onClick={() => playerTurnHandler('playerTwo')} id="btn-deck" type="button" className="btn btn-success btn-sm btn-deck-alt mt-3" data-bs-toggle="modal" data-bs-target="#cardsModal">ESCOLHER POKÉMONS</button>
                         </div>
                         </div>
 
@@ -319,7 +267,6 @@ const Trades = () => {
             {/* <ul>{pokemons_list}</ul> */}
         </div>
         </>
-    
     )
 }
 
