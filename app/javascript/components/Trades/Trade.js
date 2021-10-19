@@ -52,7 +52,7 @@ const Trades = () => {
                     icon: 'error',
                     title: 'Oops...',
                     confirmButtonColor: '#4589ed',
-                    text: 'O treinador já possui o número máximo de pokémons para troca!',
+                    text: 'O treinador já possui o número máximo de pokémons para troca (6 pokémons)!',
                 })
             }
         } else if (player == 'playerTwo') {
@@ -63,7 +63,7 @@ const Trades = () => {
                     icon: 'error',
                     title: 'Oops...',
                     confirmButtonColor: '#4589ed',
-                    text: 'O treinador já possui o número máximo de pokémons para troca!',
+                    text: 'O treinador já possui o número máximo de pokémons para troca! (6 pokémons)',
                 })
             }
         }
