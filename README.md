@@ -1,6 +1,14 @@
 ## Sobre o projeto
 O bjetivo deste projeto é gerenciar trocas de pokemon, onde o usuário escolhe quais pokémons deseja trocar para cada um dos treinadores, incluindo validações como varificar se uma troca é justa ou não e a quantidade de pokémons a serem trocados (1 a 6). As informações sobre os pokémons foram obtidas da API [PokeAPI](https://pokeapi.co/docs/v2). Feito com Ruby on Rails, React JS e PostgreSQL.
 
+## Screeshots
+![](![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader1.png)
+![](![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader1a.png)
+![](![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader1b.png)
+![](![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader2.png)
+![](![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader2a.png)
+![](![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader3.png)
+
 ## Stack
 - Ruby on Rails
 - React
