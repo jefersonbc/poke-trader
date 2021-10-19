@@ -1,5 +1,5 @@
 ## Sobre o projeto
-O bjetivo deste projeto é gerenciar trocas de pokemon, onde o usuário escolhe quais pokémons deseja trocar para cada um dos treinadores, incluindo validações como varificar se uma troca é justa ou não e a quantidade de pokémons a serem trocados (1 a 6). As informações sobre os pokémons foram obtidas da API [PokeAPI](https://pokeapi.co/docs/v2).
+O bjetivo deste projeto é gerenciar trocas de pokemon, onde o usuário escolhe quais pokémons deseja trocar para cada um dos treinadores, incluindo validações como verificar se uma troca é justa ou não e a quantidade de pokémons a serem trocados (1 a 6). Todas as trocas são persistidas no banco para consulta. As informações sobre os pokémons foram obtidas da API [PokeAPI](https://pokeapi.co/docs/v2).
 
 ## Screeshots
 ![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader1.png)
@@ -39,4 +39,10 @@ A aplicação possui os seguintes endpoints e rotas:
 - / - página inicial com a UI para realizar as trocas
 - /trades - Página para visualizar o histórico de trocas
 
-## Teste a aplicação
+## To-do
+Algumas melhorias que podem ser implementadas:
+
+- Adicionar usuários 'reais' para que possam criar seus decks e realmente simular as trocas
+- Gerar decks individuais para cada um dos treinadores, com cartas aleatórias/repetidas
+- Realizar a troca 'efetiva' de pokémons, ou seja, os pokémons trocados são movidos para os decks dos treinadores
+
