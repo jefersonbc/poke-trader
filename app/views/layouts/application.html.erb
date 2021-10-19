@@ -66,11 +66,12 @@
       }
 
       .player-profile-card.player1 .player-profile-cover {
-        background-image: url(http://cdn30.us1.fansshare.com/image/pcwallpapers/pokemon-pc-wallpaper-248119474.jpg);
+        background-image: url(https://poke-trader.s3.sa-east-1.amazonaws.com/cover4.jpg);
+        background-position: center !important;
       }
 
       .player-profile-card.player2 .player-profile-cover {
-        background-image: url(https://wallpaperaccess.com/full/329113.jpg);
+        background-image: url(https://poke-trader.s3.sa-east-1.amazonaws.com/cover2.jpg);
       }
 
       .player-info-container {
@@ -95,11 +96,40 @@
         border-radius: 50px;
         font-size: .7rem;
         padding: 5px 10px 5px 10px;
+        box-shadow: 0 0 0 0.25rem rgb(60 153 110 / 50%)
+      }
+
+      .btn-deck-alt {
+        border-radius: 50px;
+        font-size: .7rem;
+        padding: 5px 10px 5px 10px;
+        color: #fff;
+        background-color: #856eb5;
+        border-color: #856eb5;
+        box-shadow: 0 0 0 0.25rem rgb(146 119 199 / 50%) !important
+      }
+
+      .btn-deck-alt:hover, .btn-deck-alt:active, .btn-deck-alt:focus {
+        background-color: #65528b;
+        border-color: #65528b;
       }
 
       /* Card  */
       .cards-row {
         padding: 15px;
+        min-height: 375px;
+      }
+
+      .cards-row .card {
+        border-radius: 12px !important;
+      }
+
+      .card.pokemon-list-item {
+        border-radius: 12px !important;
+      }
+
+      .card.pokemon-list-item:hover {
+        cursor: pointer
       }
 
       .card {
@@ -156,6 +186,21 @@
 
       .navbar-poke-trader {
         background-color: #615dfa !important;
+      }
+
+      #cardsModal .modal-content {
+        border-radius: 12px !important;
+        border: none !important;
+      }
+
+      #cardsModal.playerOne .modal-header {
+        background: #1bb984;
+        color: #fff;
+      }
+
+      #cardsModal.playerTwo .modal-header {
+        background: #9d81d5;
+        color: #fff;
       }
 
       .bd-placeholder-img {
