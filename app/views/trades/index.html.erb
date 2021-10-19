@@ -1,78 +1,74 @@
 <style>
 
-.table-striped>tbody>tr:nth-of-type(odd) {
-    --bs-table-accent-bg: var(--bs-table-striped-bg);
-    color: var(--bs-table-striped-color);
-}
+    .table-striped>tbody>tr:nth-of-type(odd) {
+        --bs-table-accent-bg: var(--bs-table-striped-bg);
+        color: var(--bs-table-striped-color);
+    }
+
+    .table-striped>tbody>tr:nth-of-type(odd) {
+        --bs-table-accent-bg: #fcfcfc
+    }
+    tbody, td, tfoot, th, thead, tr {
+        border: none
+    }
+    .table-responsive {
+        box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
+    }
+    #tradeHistoryBody td {
+        padding: 20px !important;
+    }
+
+    #tradeHistoryTHead th {
+        padding: 20px !important;
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
 
 </style>
 
 <div class="container">
-            <p class="mt-5 text-uppercase"><strong>Últimas Trocas</strong></p>
-            <style>
-                .table-striped>tbody>tr:nth-of-type(odd) {
-                    --bs-table-accent-bg: #fcfcfc
-                }
-                tbody, td, tfoot, th, thead, tr {
-                    border: none
-                }
-                .table-responsive {
-                    box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
-                }
-                #tradeHistoryBody td {
-                    padding: 20px !important;
-                }
-
-                #tradeHistoryTHead th {
-                    padding: 20px !important;
-                    font-size: .8rem;
-                    text-transform: uppercase;
-                }
-            </style>
-            <div class="table-responsive mt-5 mb-5">
-                <table class="table table-striped">
-                    <thead id="tradeHistoryTHead">
-                        <tr>
-                            <th style="width: 40%">Treinador 1</th>
-                            <th style="width: 40%">Treinador 2</th>
-                            <th>Sobre a troca</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tradeHistoryBody">
-                        <% @trades.each do |trade| %>
-                            <tr>
-                                <td>
-                                    <span class="mb-3" style="display: block;background: #f0f0f0b3;border-radius: 50px;">
-                                        <img class="player-avatar" src="https://poke-trader.s3.sa-east-1.amazonaws.com/avatar2.jpg" style="width: 32px;">
-                                        <span style="font-size: .8rem;">
-                                            <strong>Nash</strong> | XP Total: 999
-                                        </span>
-                                    </span>
-                                    <% trade.player_one_pokemons.each do |pokemon| %>
-                                        <img src="<%= pokemon.sprite %>" style="width:72px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
-                                    <% end %>
-                                </td>
-                                <td>
-                                    <span class="mb-3" style="display: block;background: #f0f0f0b3;border-radius: 50px;">
-                                        <img class="player-avatar" src="https://poke-trader.s3.sa-east-1.amazonaws.com/avatar1.jpg" style="width: 32px;">
-                                        <span style="font-size: .8rem;">
-                                            <strong>Tatu</strong> | XP Total: 999
-                                        </span>
-                                    </span>
-                                    <% trade.player_two_pokemons.each do |pokemon| %>
-                                    <img src="<%= pokemon.sprite %>" style="width:72px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
-                                    <% end %>
-                                </td>
-                                <td style="font-size: .9rem">
-                                    Troca Justa: <%= trade.is_fair %>
-                                    <br>
-                                    Realizada em: <%= trade.created_at %>
-                                </td>
-                            </tr>
-                        <% end %>
-                    </tbody>    
-                </table>
-            </div>
-        </div>
+    <p class="mt-5 text-uppercase" style="text-align:center;"><strong>Últimas Trocas</strong></p>
+    <div class="table-responsive mt-5 mb-5">
+        <table class="table table-striped">
+            <thead id="tradeHistoryTHead">
+                <tr>
+                    <th style="width: 40%">Treinador 1</th>
+                    <th style="width: 40%">Treinador 2</th>
+                    <th>Sobre a troca</th>
+                </tr>
+            </thead>
+            <tbody id="tradeHistoryBody">
+                <% @trades.each do |trade| %>
+                    <tr>
+                        <td>
+                            <span class="mb-3" style="display: block;background: #f0f0f0b3;border-radius: 50px;">
+                                <img class="player-avatar" src="https://poke-trader.s3.sa-east-1.amazonaws.com/avatar2.jpg" style="width: 32px;">
+                                <span style="font-size: .8rem;">
+                                    <strong>Nash</strong> | XP Total: <%= trade.player_one_pokemons_total_xp %>
+                                </span>
+                            </span>
+                            <% trade.player_one_pokemons.each do |pokemon| %>
+                                <img src="<%= pokemon.sprite %>" style="width:72px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
+                            <% end %>
+                        </td>
+                        <td>
+                            <span class="mb-3" style="display: block;background: #f0f0f0b3;border-radius: 50px;">
+                                <img class="player-avatar" src="https://poke-trader.s3.sa-east-1.amazonaws.com/avatar1.jpg" style="width: 32px;">
+                                <span style="font-size: .8rem;">
+                                    <strong>Tatu</strong> | XP Total: <%= trade.player_two_pokemons_total_xp %>
+                                </span>
+                            </span>
+                            <% trade.player_two_pokemons.each do |pokemon| %>
+                            <img src="<%= pokemon.sprite %>" style="width:72px" title="" data-toggle="tooltip" data-original-title="<%= pokemon.name %>">
+                            <% end %>
+                        </td>
+                        <td style="font-size: .9rem">
+                            <p><strong>A troca foi: <%= trade.is_fair_to_s %></strong></p>
+                            <p>Realizada em: <br/> <%= trade.created_at.strftime("%d/%m/%y às %H:%M:%S") %></p>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>    
+        </table>
     </div>
 </div>
