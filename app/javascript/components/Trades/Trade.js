@@ -7,7 +7,6 @@ import PlayerPokemon from './PlayerPokemon'
 const Trades = () => {
 
     const [pokemons, setPokemons] = useState([])
-    const [tradeHistory, settradeHistory] = useState([])
     const [playerOnePokemons, setplayerOnePokemons] = useState([])
     const [playerTwoPokemons, setplayerTwoPokemons] = useState([])
     const [playerTurn, setplayerTurn] = useState('')
@@ -23,14 +22,6 @@ const Trades = () => {
         } )
         .catch( resp => console.log(resp) )
     }, [pokemons.length])
-
-    useEffect(() => {
-        axios.get('/api/v1/trades.json')
-        .then( resp => {
-            settradeHistory(resp.data.data)
-        } )
-        .catch( resp => console.log(resp) )
-    }, [tradeHistory.length])
 
     const totalBaseExperiencePlayerOne = playerOnePokemons.reduce(
         (acc, pokemon) => acc + pokemon.attributes.base_experience,
