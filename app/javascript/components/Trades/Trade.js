@@ -257,7 +257,7 @@ const Trades = () => {
                 <div className="modal-dialog modal-xl modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="cardsModalScrollableTitle">Selecione as cartas para trocar</h5>
+                            <h5 className="modal-title" id="cardsModalScrollableTitle">Selecione os pokémons para trocar</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
