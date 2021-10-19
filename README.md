@@ -1,5 +1,5 @@
 ## Sobre o projeto
-O bjetivo deste projeto é simular trocas de pokémons, onde o usuário escolhe quais pokémons deseja trocar para cada um dos treinadores, incluindo validações como verificar se uma troca é justa ou não e a quantidade de pokémons a serem trocados (1 a 6). Todas as trocas são persistidas no banco para consulta. As informações sobre os pokémons foram obtidas da API [PokeAPI](https://pokeapi.co/docs/v2).
+O bjetivo deste projeto é simular trocas de pokémons, onde o usuário escolhe quais pokémons deseja trocar para cada um dos treinadores, incluindo validações como verificar se uma troca é justa ou não e a quantidade de pokémons a serem trocados (1 a 6). Todas as trocas são persistidas no banco para consulta. As informações sobre os pokémons são obtidas da API [PokeAPI](https://pokeapi.co/docs/v2).
 
 ## Screeshots
 ![image](https://poke-trader.s3.sa-east-1.amazonaws.com/screeshots/poke-trader1.png)
