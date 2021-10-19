@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_17_155658) do
+ActiveRecord::Schema.define(version: 2021_10_19_014253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 2021_10_17_155658) do
     t.string "name"
     t.integer "base_experience"
     t.string "sprite"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trade_items", force: :cascade do |t|
+    t.integer "trade_id"
+    t.integer "player_id"
+    t.integer "pokemon_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trades", force: :cascade do |t|
+    t.boolean "is_fair"
+    t.integer "player_one_id"
+    t.integer "player_two_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
