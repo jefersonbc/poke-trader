@@ -44,5 +44,6 @@ Algumas melhorias que podem ser implementadas:
 
 - Adicionar usuários 'reais' para que possam criar seus decks e realmente simular as trocas
 - Gerar decks individuais para cada um dos treinadores, com cartas aleatórias/repetidas
-- Realizar a troca 'efetiva' de pokémons, ou seja, os pokémons trocados são movidos para os decks dos treinadores
+- Realizar a troca 'efetiva' de pokémons, ou seja, os pokémons trocados são movidos, efetivamente, para os decks dos treinadores
+- Tem sugestões?
 
