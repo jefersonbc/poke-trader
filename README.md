@@ -32,8 +32,8 @@ A aplicação possui os seguintes endpoints e rotas:
 ### api/v1: API endpoints:
 
 - api/v1/pokemons: [GET] - retorna todos os pokémons
-- api/v1/trades: [GET] - retorna todas as trocas e os itens da troca (player e pokémon)
-- api/v1/trades: [POST] - insere uma nova troca e os itens associados (ites da troca)
+- api/v1/trades: [GET] - retorna todas as trocas
+- api/v1/trades: [POST] - insere uma nova troca
 
 ### Rotas
 - / - página inicial com a UI para realizar as trocas
@@ -45,5 +45,5 @@ Algumas melhorias que podem ser implementadas:
 - Adicionar usuários 'reais' para que possam criar seus decks e realmente simular as trocas
 - Gerar decks individuais para cada um dos treinadores, com cartas aleatórias/repetidas
 - Realizar a troca 'efetiva' de pokémons, ou seja, os pokémons trocados são movidos, efetivamente, para os decks dos treinadores
-- Tem sugestões?
+- ...
 
