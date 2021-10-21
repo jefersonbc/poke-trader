@@ -9,7 +9,6 @@ module Api
             end
 
             def create
-                puts trade_params
                 @trade = Trade.new(trade_params)
             
                 respond_to do |format|
